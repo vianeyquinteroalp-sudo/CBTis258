@@ -1,0 +1,1751 @@
+/* ======================================
+CBTis 258 | DISEÑO PRINCIPAL
+Guindo + blanco + neón suave
+====================================== */
+
+:root {
+--guindo: #791f40;
+--guindo-claro: #a93660;
+--fondo: #151116;
+--panel: #211820;
+--blanco: #000000;
+--texto: #d9cbd2;
+--borde: #4c2939;
+--brillo: rgba(196, 65, 111, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+background: var(--fondo);
+color: var(--blanco);
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.6;
+}
+
+/* ENCABEZADO */
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 18px;
+padding: 16px 5%;
+background: #1d161c;
+border-bottom: 1px solid var(--borde);
+box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+max-width: 65px;
+height: auto;
+}
+
+header h1 {
+color: white;
+margin: 0;
+}
+
+header p {
+color: var(--texto);
+margin: 3px 0;
+}
+
+nav {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+nav a {
+display: inline-block;
+padding: 9px 13px;
+color: #f8eaf0;
+text-decoration: none;
+border-radius: 6px;
+transition: 0.25s ease;
+}
+
+nav a:hover {
+background: var(--guindo);
+box-shadow: 0 0 14px var(--brillo);
+}
+
+/* PORTADA DE BIENVENIDA */
+
+body > section:first-of-type,
+main > section:first-of-type {
+position: relative;
+isolation: isolate;
+overflow: hidden;
+min-height: 410px;
+padding: 70px 7%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+background:
+    linear-gradient(
+        90deg,
+        rgba(90, 20, 45, 0.78),
+        rgba(90, 20, 45, 0.25)
+    ),
+    url("../portada.jpeg") center / cover no-repeat;
+}
+
+body > section:first-of-type::after,
+main > section:first-of-type::after {
+content: "</>";
+position: absolute;
+z-index: -1;
+right: 7%;
+bottom: -45px;
+font-size: clamp(130px, 22vw, 250px);
+font-weight: bold;
+color: rgba(231, 147, 177, 0.08);
+pointer-events: none;
+}
+
+body > section:first-of-type h1,
+main > section:first-of-type h1 {
+max-width: 760px;
+margin: 0 0 18px;
+color: white;
+font-size: clamp(36px, 5vw, 62px);
+line-height: 1.12;
+text-shadow: 0 0 24px rgba(192, 60, 106, 0.22);
+}
+
+body > section:first-of-type p,
+main > section:first-of-type p {
+max-width: 620px;
+color: var(--texto);
+font-size: 17px;
+}
+
+/* ACCESOS DIRECTOS */
+
+.accesos {
+padding: 55px 6%;
+background:
+radial-gradient(
+circle at 10% 0%,
+rgba(121, 31, 64, 0.13),
+transparent 35%
+),
+var(--fondo);
+}
+
+.accesos-titulo {
+margin-bottom: 28px;
+}
+
+.accesos-titulo > span {
+color: #e5a0b8;
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+.accesos-titulo h2 {
+margin: 7px 0;
+color: white;
+font-size: clamp(27px, 4vw, 36px);
+}
+
+.accesos-titulo p {
+color: var(--texto);
+margin: 0;
+}
+
+.accesos-grid {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 17px;
+}
+
+.acceso-card {
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+min-height: 245px;
+padding: 23px 19px;
+overflow: hidden;
+text-decoration: none;
+color: white;
+background: linear-gradient(145deg, #291d25, #1c161c);
+border: 1px solid #4c2939;
+border-radius: 12px;
+transition:
+transform 0.25s ease,
+border-color 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.acceso-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: linear-gradient(
+90deg,
+var(--guindo),
+#e17b9e,
+transparent
+);
+opacity: 0.8;
+}
+
+.acceso-card:hover {
+transform: translateY(-6px);
+border-color: #bd5578;
+box-shadow:
+0 8px 28px rgba(0, 0, 0, 0.25),
+0 0 20px rgba(177, 52, 96, 0.14);
+}
+
+.acceso-icono {
+display: grid;
+place-items: center;
+width: 46px;
+height: 46px;
+margin-bottom: 15px;
+color: #ffdce8;
+background: #4a1d31;
+border: 1px solid #82314e;
+border-radius: 10px;
+font-size: 25px;
+box-shadow: 0 0 15px rgba(175, 54, 96, 0.13);
+}
+
+.acceso-card h3 {
+margin: 0 0 9px;
+color: white;
+font-size: 18px;
+}
+
+.acceso-card p {
+margin: 0 0 18px;
+color: var(--texto);
+font-size: 14px;
+}
+
+.acceso-link {
+margin-top: auto;
+color: #eda9c0;
+font-size: 13px;
+font-weight: bold;
+}
+
+.acceso-card.destacado {
+background: linear-gradient(145deg, #62203b, #311923);
+border-color: #a74767;
+}
+
+.acceso-card.destacado .acceso-icono {
+background: #8c2d4d;
+border-color: #d36b91;
+}
+
+/* RESTO DE LAS SECCIONES */
+
+section {
+scroll-margin-top: 20px;
+}
+
+#especialidades,
+#actividades,
+#plantel,
+#contacto {
+padding: 45px 6%;
+border-top: 1px solid #38232e;
+}
+
+#especialidades {
+background: #191419;
+}
+
+#actividades,
+#plantel,
+#contacto {
+background: #211820;
+}
+
+section h2 {
+color: white;
+}
+
+section h3 {
+color: #f0bfd0;
+}
+
+section p {
+color: var(--texto);
+}
+
+/* TARJETAS DE CONTENIDO */
+
+.tarjeta,
+.card,
+#especialidades article {
+padding: 20px;
+background: var(--panel);
+border: 1px solid var(--borde);
+border-radius: 10px;
+transition: 0.25s ease;
+}
+
+.tarjeta:hover,
+.card:hover,
+#especialidades article:hover {
+border-color: #a74767;
+box-shadow: 0 0 17px rgba(173, 52, 94, 0.12);
+}
+
+/* BOTONES */
+
+button,
+.boton,
+a.boton {
+display: inline-block;
+padding: 11px 19px;
+color: white;
+background: var(--guindo);
+border: 1px solid #b24c70;
+border-radius: 7px;
+text-decoration: none;
+font-weight: bold;
+cursor: pointer;
+transition: 0.25s ease;
+}
+
+button:hover,
+.boton:hover,
+a.boton:hover {
+background: var(--guindo-claro);
+box-shadow: 0 0 18px rgba(199, 69, 116, 0.32);
+transform: translateY(-2px);
+}
+
+/* IMÁGENES */
+
+img {
+max-width: 100%;
+}
+
+section img {
+border-radius: 9px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+padding: 27px 6%;
+text-align: center;
+color: #cdbdc5;
+background: #100d10;
+border-top: 2px solid var(--guindo);
+}
+
+footer p {
+color: #cdbdc5;
+font-size: 13px;
+}
+
+/* CELULARES */
+
+@media (max-width: 950px) {
+.accesos-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 600px) {
+header {
+justify-content: center;
+text-align: center;
+padding: 15px 4%;
+}
+
+nav {
+    width: 100%;
+    gap: 4px;
+}
+
+nav a {
+    padding: 8px;
+    font-size: 12px;
+}
+
+body > section:first-of-type,
+main > section:first-of-type {
+    min-height: 340px;
+    padding: 48px 6%;
+}
+
+body > section:first-of-type h1,
+main > section:first-of-type h1 {
+    font-size: 36px;
+}
+
+body > section:first-of-type p,
+main > section:first-of-type p {
+    font-size: 15px;
+}
+
+.accesos {
+    padding: 36px 5%;
+}
+
+.accesos-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+}
+
+.acceso-card {
+    min-height: 205px;
+}
+
+#especialidades,
+#actividades,
+#plantel,
+#contacto {
+    padding: 32px 5%;
+}
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+}
+
+/* ===== ESPECIALIDADES CBTis 258 ===== */
+
+.seccion-especialidades {
+padding: 55px 6%;
+background: #fffafb;
+color: #38242c;
+}
+
+.seccion-especialidades .titulo-seccion h2 {
+color: #69213c;
+font-size: 34px;
+margin-bottom: 10px;
+}
+
+.seccion-especialidades .titulo-seccion span {
+color: #a33e60;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+/* Cuadrícula de especialidades */
+
+.seccion-especialidades .rejilla {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 17px;
+padding: 0;
+margin: 28px 0 10px;
+list-style: none;
+}
+
+/* Botones */
+
+.seccion-especialidades .rejilla li a {
+display: flex;
+align-items: center;
+gap: 15px;
+min-height: 78px;
+padding: 17px 20px;
+color: #70233f;
+background: linear-gradient(135deg, #ffffff, #fff0f5);
+border: 1px solid #e6c1cf;
+border-left: 5px solid #812642;
+border-radius: 12px;
+text-decoration: none;
+box-shadow: 0 4px 12px rgba(105, 33, 60, 0.08);
+transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+/* Número de cada especialidad */
+
+.seccion-especialidades .numero {
+display: grid;
+place-items: center;
+flex-shrink: 0;
+width: 42px;
+height: 42px;
+color: white;
+background: #812642;
+border-radius: 9px;
+font-size: 14px;
+font-weight: bold;
+}
+
+/* Nombre de la especialidad */
+
+.seccion-especialidades .rejilla li a > span:nth-child(2) {
+flex: 1;
+font-size: 16px;
+font-weight: bold;
+}
+
+/* Flechita */
+
+.seccion-especialidades .flecha {
+color: #a13e60;
+font-size: 21px;
+transition: transform 0.25s;
+}
+
+/* Efecto al pasar el cursor */
+
+.seccion-especialidades .rejilla li a:hover {
+color: white;
+background: linear-gradient(120deg, #72203e, #a33c60);
+border-color: #bd6685;
+transform: translateY(-4px);
+box-shadow: 0 8px 22px rgba(129, 38, 66, 0.22);
+}
+
+.seccion-especialidades .rejilla li a:hover .numero {
+color: #812642;
+background: white;
+}
+
+.seccion-especialidades .rejilla li a:hover .flecha {
+color: white;
+transform: translateX(5px);
+}
+
+/* ===== ACTIVIDADES Y VIDA ESTUDIANTIL ===== */
+
+.seccion-actividades {
+padding: 50px 6%;
+background: linear-gradient(135deg, #fff0f5, #ffffff);
+}
+
+.seccion-actividades .titulo-seccion h2 {
+color: #69213c;
+}
+
+.rejilla-actividades {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 17px;
+padding: 0;
+margin: 25px 0;
+list-style: none;
+}
+
+.rejilla-actividades li a {
+display: flex;
+align-items: center;
+gap: 13px;
+min-height: 75px;
+padding: 16px 18px;
+color: #70233f;
+background: white;
+border: 1px solid #e6c1cf;
+border-radius: 12px;
+text-decoration: none;
+box-shadow: 0 4px 12px rgba(105, 33, 60, 0.07);
+transition: 0.25s ease;
+}
+
+.rejilla-actividades .icono {
+display: grid;
+place-items: center;
+flex-shrink: 0;
+width: 40px;
+height: 40px;
+color: white;
+background: #812642;
+border-radius: 10px;
+}
+
+.rejilla-actividades .flecha {
+margin-left: auto;
+color: #a13e60;
+}
+
+.rejilla-actividades li a:hover {
+color: white;
+background: #812642;
+transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(129, 38, 66, 0.20);
+}
+
+.rejilla-actividades li a:hover .icono {
+color: #812642;
+background: white;
+}
+
+.rejilla-actividades li a:hover .flecha {
+color: white;
+}
+
+/* ===== AJUSTES PARA CELULARES ===== */
+
+@media (max-width: 650px) {
+.seccion-especialidades,
+.seccion-actividades {
+padding: 35px 5%;
+}
+
+.seccion-especialidades .rejilla,
+.rejilla-actividades {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.seccion-especialidades .titulo-seccion h2 {
+    font-size: 28px;
+}
+
+}
+
+/* ===== BOTONES DE ESPECIALIDADES ===== */
+
+.seccion-especialidades {
+    padding: 65px 7%;
+    background: linear-gradient(135deg, #fff8fa, #f8e9ef);
+}
+
+.seccion-especialidades .rejilla {
+    list-style: none;
+    padding: 0;
+    margin: 35px auto 0;
+    max-width: 1150px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.seccion-especialidades .rejilla li {
+    margin: 0;
+    min-width: 0;
+}
+
+.seccion-especialidades .rejilla a {
+    min-height: 85px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 22px 25px;
+    background: white;
+    border: 1px solid #ead1dc;
+    border-left: 6px solid #801b43;
+    border-radius: 15px;
+    color: #60152f;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(100, 25, 55, 0.09);
+    transition: transform 0.25s, box-shadow 0.25s,
+                background 0.25s;
+}
+
+.seccion-especialidades .rejilla a:hover {
+    background: #801b43;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(100, 25, 55, 0.2);
+}
+
+.seccion-especialidades .numero {
+    color: #b34b75;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.seccion-especialidades .rejilla a:hover .numero {
+    color: #ffe2ed;
+}
+
+.seccion-especialidades .flecha {
+    font-size: 22px;
+    color: #b34b75;
+}
+
+.seccion-especialidades .rejilla a:hover .flecha {
+    color: white;
+}
+
+/* ===== BOTONES DE ACTIVIDADES ===== */
+
+.seccion-actividades {
+    padding: 60px 7%;
+    background: #fff;
+}
+
+.seccion-actividades .rejilla-actividades {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0;
+    max-width: 1150px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.seccion-actividades .rejilla-actividades li {
+    min-width: 0;
+}
+
+.seccion-actividades .rejilla-actividades a {
+    box-sizing: border-box;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff7fa;
+    border: 1px solid #efd6e0;
+    color: #681832;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.seccion-actividades .rejilla-actividades a:hover {
+    background: #f4dce6;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px #68183220;
+}
+
+/* ===== AJUSTE PARA CELULARES ===== */
+
+@media (max-width: 650px) {
+    .seccion-especialidades,
+    .seccion-actividades {
+        padding: 40px 5%;
+    }
+
+    .seccion-especialidades .rejilla,
+    .seccion-actividades .rejilla-actividades {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .seccion-especialidades .rejilla a {
+        padding: 18px;
+        font-size: 15px;
+    }
+}
+/* ===== ESPECIALIDADES: BOTONES PRINCIPALES ===== */
+
+.seccion-especialidades {
+    padding: 55px 7%;
+    background: linear-gradient(145deg, #fff8fb, #f4e5ec);
+    color: #421326;
+}
+
+.titulo-especialidades,
+.titulo-accesos {
+    max-width: 1150px;
+    margin: 0 auto 30px;
+}
+
+.titulo-especialidades > span,
+.titulo-accesos > span {
+    color: #a43c68;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.titulo-especialidades h2,
+.titulo-accesos h2 {
+    margin: 10px 0;
+    color: #681832;
+    font-size: clamp(27px, 4vw, 38px);
+}
+
+.titulo-especialidades p,
+.titulo-accesos p {
+    color: #765866;
+    line-height: 1.6;
+}
+
+.botones-especialidades {
+    max-width: 1150px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.boton-carrera {
+    position: relative;
+    min-height: 155px;
+    padding: 22px 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 13px;
+    background: #fff;
+    border: 1px solid #ead2dd;
+    border-top: 4px solid #861d47;
+    border-radius: 15px;
+    box-shadow: 0 5px 16px rgba(104, 24, 50, 0.08);
+    color: #681832;
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s,
+                background .25s, color .25s;
+}
+
+.icono-carrera {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #f7e5ed;
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.nombre-carrera {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.flecha-carrera {
+    color: #a43c68;
+    font-size: 21px;
+    align-self: flex-end;
+}
+
+.boton-carrera:hover {
+    background: #861d47;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(104, 24, 50, .18);
+}
+
+.boton-carrera:hover .icono-carrera {
+    background: #fff;
+}
+
+.boton-carrera:hover .flecha-carrera {
+    color: #fff;
+}
+
+/* ===== TARJETAS "EXPLORA EL CBTIS" ===== */
+
+.seccion-accesos {
+    padding: 55px 7%;
+    background: #fff;
+    color: #421326;
+}
+
+.tarjetas-accesos {
+    max-width: 1150px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tarjeta-acceso {
+    min-width: 0;
+    padding: 22px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fffafb;
+    border: 1px solid #ead2dd;
+    border-top: 4px solid #a43c68;
+    border-radius: 15px;
+    color: #681832;
+    text-decoration: none;
+    box-shadow: 0 5px 16px rgba(104, 24, 50, .07);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.icono-acceso {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-acceso h3 {
+    margin: 5px 0 8px;
+    font-size: 18px;
+}
+
+.tarjeta-acceso p {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.texto-acceso {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #a43c68;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.tarjeta-acceso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(104, 24, 50, .13);
+}
+
+.tarjeta-destacada {
+    background: #861d47;
+    color: #fff;
+}
+
+.tarjeta-destacada .texto-acceso {
+    color: #ffe1ed;
+}
+
+/* ===== CELULARES Y TABLETAS ===== */
+
+@media (max-width: 950px) {
+    .botones-especialidades,
+    .tarjetas-accesos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .seccion-especialidades,
+    .seccion-accesos {
+        padding: 38px 5%;
+    }
+
+    .botones-especialidades,
+    .tarjetas-accesos {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .boton-carrera {
+        min-height: 115px;
+        padding: 18px;
+    }
+
+    .tarjeta-acceso {
+        padding: 20px;
+    }
+}
+
+/* ===== ESPECIALIDADES: BOTONES PRINCIPALES ===== */
+
+.seccion-especialidades {
+    padding: 55px 7%;
+    background: linear-gradient(145deg, #fff8fb, #f4e5ec);
+    color: #421326;
+}
+
+.titulo-especialidades,
+.titulo-accesos {
+    max-width: 1150px;
+    margin: 0 auto 30px;
+}
+
+.titulo-especialidades > span,
+.titulo-accesos > span {
+    color: #a43c68;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.titulo-especialidades h2,
+.titulo-accesos h2 {
+    margin: 10px 0;
+    color: #681832;
+    font-size: clamp(27px, 4vw, 38px);
+}
+
+.titulo-especialidades p,
+.titulo-accesos p {
+    color: #765866;
+    line-height: 1.6;
+}
+
+.botones-especialidades {
+    max-width: 1150px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.boton-carrera {
+    position: relative;
+    min-height: 155px;
+    padding: 22px 18px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 13px;
+    background: #fff;
+    border: 1px solid #ead2dd;
+    border-top: 4px solid #861d47;
+    border-radius: 15px;
+    box-shadow: 0 5px 16px rgba(104, 24, 50, 0.08);
+    color: #681832;
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s,
+                background .25s, color .25s;
+}
+
+.icono-carrera {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #f7e5ed;
+    border-radius: 12px;
+    font-size: 23px;
+}
+
+.nombre-carrera {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.flecha-carrera {
+    color: #a43c68;
+    font-size: 21px;
+    align-self: flex-end;
+}
+
+.boton-carrera:hover {
+    background: #861d47;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(104, 24, 50, .18);
+}
+
+.boton-carrera:hover .icono-carrera {
+    background: #fff;
+}
+
+.boton-carrera:hover .flecha-carrera {
+    color: #fff;
+}
+
+/* ===== TARJETAS "EXPLORA EL CBTIS" ===== */
+
+.seccion-accesos {
+    padding: 55px 7%;
+    background: #fff;
+    color: #421326;
+}
+
+.tarjetas-accesos {
+    max-width: 1150px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tarjeta-acceso {
+    min-width: 0;
+    padding: 22px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fffafb;
+    border: 1px solid #ead2dd;
+    border-top: 4px solid #a43c68;
+    border-radius: 15px;
+    color: #681832;
+    text-decoration: none;
+    box-shadow: 0 5px 16px rgba(104, 24, 50, .07);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.icono-acceso {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-acceso h3 {
+    margin: 5px 0 8px;
+    font-size: 18px;
+}
+
+.tarjeta-acceso p {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.texto-acceso {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #a43c68;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.tarjeta-acceso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(104, 24, 50, .13);
+}
+
+.tarjeta-destacada {
+    background: #861d47;
+    color: #fff;
+}
+
+.tarjeta-destacada .texto-acceso {
+    color: #ffe1ed;
+}
+
+/* ===== CELULARES Y TABLETAS ===== */
+
+@media (max-width: 950px) {
+    .botones-especialidades,
+    .tarjetas-accesos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .seccion-especialidades,
+    .seccion-accesos {
+        padding: 38px 5%;
+    }
+
+    .botones-especialidades,
+    .tarjetas-accesos {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .boton-carrera {
+        min-height: 115px;
+        padding: 18px;
+    }
+
+    .tarjeta-acceso {
+        padding: 20px;
+    }
+}
+
+.marca-activa img {
+    transform: scale(1.08) rotate(-4deg);
+    filter: drop-shadow(0 0 12px #a83b63);
+}
+
+.marca-activa .datos-marca h1 {
+    color: #a83b63;
+}
+/* ===== NUEVO DISEÑO DEL HEADER ===== */
+
+header.encabezado {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 4% !important;
+    background: #fffaf7 !important;
+    border-bottom: 3px solid #711d3a;
+    box-shadow: 0 5px 20px rgba(40, 10, 20, 0.15);
+}
+
+/* Logo y datos a la izquierda */
+
+header.encabezado > .marca {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px;
+    flex: 1 1 390px;
+    min-width: 0;
+    text-decoration: none;
+}
+
+header.encabezado .marca img {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+header.encabezado .datos-marca {
+    display: block;
+}
+
+header.encabezado .datos-marca h1 {
+    margin: 0 0 5px !important;
+    color: #711d3a !important;
+    font-size: 30px !important;
+}
+
+header.encabezado .datos-marca p {
+    margin: 0 !important;
+    max-width: 360px;
+    color: #51424a !important;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Botones alineados a la derecha */
+
+header.encabezado nav.menu-principal {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 0 1 auto;
+    margin: 0 !important;
+}
+
+header.encabezado nav.menu-principal a {
+    display: inline-block;
+    padding: 12px 15px !important;
+    border: 1px solid #e5d5dc;
+    border-radius: 9px;
+    background: transparent;
+    color: #3d2931 !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+header.encabezado nav.menu-principal a:hover,
+header.encabezado nav.menu-principal a:last-child {
+    background: #711d3a !important;
+    color: white !important;
+    border-color: #711d3a;
+}
+
+header.encabezado nav.menu-principal a:hover {
+    transform: translateY(-2px);
+}
+
+/* Distribución para celular */
+
+@media (max-width: 800px) {
+    header.encabezado {
+        flex-direction: column !important;
+        gap: 14px;
+        padding: 16px !important;
+    }
+
+    header.encabezado > .marca {
+        flex: initial;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header.encabezado .marca img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    header.encabezado .datos-marca h1 {
+        font-size: 24px !important;
+    }
+
+    header.encabezado nav.menu-principal {
+        justify-content: center;
+        width: 100%;
+    }
+
+    header.encabezado nav.menu-principal a {
+        padding: 9px 10px !important;
+        font-size: 12px;
+    }
+}
+
+/* ===== PALETA CBTis 258 ===== */
+
+:root {
+    --guinda: #701d38;
+    --guinda-oscuro: #35131f;
+    --rosa-guinda: #b65c7b;
+    --fondo: #171619;
+    --tarjeta: #211e23;
+    --texto: #f8f3f5;
+    --texto-suave: #c9bec4;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+/* Encabezado elegante */
+
+header.encabezado {
+    background: #f8f4f1 !important;
+    border-bottom: 3px solid var(--guinda);
+    box-shadow: 0 5px 25px #00000035;
+}
+
+header.encabezado .datos-marca h1 {
+    color: var(--guinda) !important;
+}
+
+header.encabezado .datos-marca p {
+    color: #51434a !important;
+}
+
+header.encabezado nav.menu-principal a {
+    color: #392630 !important;
+    border-color: transparent;
+}
+
+header.encabezado nav.menu-principal a:hover,
+header.encabezado nav.menu-principal a:last-child {
+    background: var(--guinda) !important;
+    color: white !important;
+}
+
+/* Entrada animada de las secciones */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Especialidades y tarjetas */
+
+.rejilla > li,
+.rejilla-actividades > li,
+.tarjeta {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.rejilla > li:hover,
+.rejilla-actividades > li:hover,
+.tarjeta:hover {
+    transform: translateY(-7px);
+    border-color: var(--rosa-guinda);
+    box-shadow: 0 12px 30px #b65c7b20;
+}
+
+/* Enlaces con una línea animada */
+
+.menu-principal a {
+    position: relative;
+}
+
+.menu-principal a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background: var(--rosa-guinda);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu-principal a:hover::after {
+    width: 65%;
+    left: 17.5%;
+}
+
+/* Logo con movimiento constante */
+
+.marca img {
+    animation: flotarLogo 3s ease-in-out infinite;
+}
+
+@keyframes flotarLogo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* HEADER TECNOLÓGICO CBTIS 258 */
+header.encabezado {
+    background: linear-gradient(110deg, #180a10, #481326, #241018) !important;
+    color: white;
+    border-bottom: 2px solid #a83258;
+    box-shadow: 0 5px 25px #b52b5830;
+    position: relative;
+    z-index: 10;
+}
+
+header.encabezado .marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+header.encabezado .datos-marca h1 {
+    color: #fff !important;
+    text-shadow: 0 0 12px #d64b77;
+}
+
+header.encabezado .datos-marca p {
+    color: #e5cbd4 !important;
+}
+
+header.encabezado nav.menu-principal a {
+    color: #fff !important;
+    transition: background .3s, color .3s, transform .3s;
+}
+
+header.encabezado nav.menu-principal a:hover {
+    background: #a83258 !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px #d64b7780;
+}
+
+/* Logo con un brillo más visible */
+header.encabezado .marca img {
+    animation: pulsoLogo 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 7px #e44d7a);
+}
+
+@keyframes pulsoLogo {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px #a83258);
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 16px #ff527f);
+        transform: scale(1.06);
+    }
+}
+/* ENTRADA DE LAS SECCIONES */
+.revelar {
+    opacity: 0;
+    transform: translateY(45px) scale(.96);
+    filter: blur(5px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        filter .8s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* TARJETAS CON BRILLO */
+.rejilla > li,
+.rejilla-actividades > li,
+.tarjeta {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #713047;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.rejilla > li::after,
+.rejilla-actividades > li::after,
+.tarjeta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        #ffffff18,
+        #ff5b8b35,
+        transparent
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+}
+
+.rejilla > li:hover::after,
+.rejilla-actividades > li:hover::after,
+.tarjeta:hover::after {
+    left: 150%;
+    transition: left .7s ease;
+}
+
+.rejilla > li:hover,
+.rejilla-actividades > li:hover,
+.tarjeta:hover {
+    transform: translateY(-9px) scale(1.02);
+    box-shadow: 0 0 25px #b8325b40;
+    border-color: #e4517b;
+}
+
+/* TÍTULOS CON UN POCO MÁS DE VIDA */
+.bienvenida h2 {
+    animation: entradaTitulo 1s ease both;
+}
+
+@keyframes entradaTitulo {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+        letter-spacing: 5px;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        letter-spacing: normal;
+    }
+}
+/* ===== FONDO TECNOLÓGICO CBTIS 258 ===== */
+:root {
+    --guinda: #8d2045;
+    --rosa-luz: #e64b7c;
+    --fondo: #100b10;
+    --tarjeta: #1b111a;
+    --texto: #fff4f8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fondo) !important;
+    color: var(--texto);
+    position: relative;
+}
+
+/* Luces animadas detrás del contenido */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 15% 20%,
+            #80163855, transparent 38%),
+        radial-gradient(ellipse at 85% 65%,
+            #b52a5b30, transparent 35%),
+        radial-gradient(ellipse at 50% 100%,
+            #48132655, transparent 40%);
+    background-size: 160% 160%;
+    animation: lucesFluidas 12s ease-in-out infinite alternate;
+}
+
+@keyframes lucesFluidas {
+    0% {
+        background-position: 0% 20%;
+    }
+    50% {
+        background-position: 100% 70%;
+    }
+    100% {
+        background-position: 30% 100%;
+    }
+}
+
+/* Cuadrícula tecnológica */
+main {
+    position: relative;
+    isolation: isolate;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(#d8447020 1px, transparent 1px),
+        linear-gradient(90deg, #d8447020 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
+}
+/* ===== SECCIONES Y TARJETAS OSCURAS ===== */
+.seccion,
+.tarjeta,
+.rejilla > li,
+.rejilla-actividades > li {
+    background: linear-gradient(
+        145deg,
+        #24141f,
+        #150e15 75%
+    ) !important;
+    color: #fff4f8 !important;
+    border: 1px solid #713047;
+    border-radius: 16px;
+}
+
+.seccion h2,
+.seccion h3,
+.tarjeta h2,
+.tarjeta h3 {
+    color: #fff4f8 !important;
+}
+
+.seccion p,
+.tarjeta p {
+    color: #d8c4ce !important;
+}
+
+/* Evita que los enlaces se queden con fondo blanco */
+.rejilla > li a,
+.rejilla-actividades > li a,
+.tarjeta a {
+    color: #ffe6ef;
+    text-decoration: none;
+}
+
+/* Efecto luminoso al pasar el cursor */
+.tarjeta:hover,
+.rejilla > li:hover,
+.rejilla-actividades > li:hover {
+    border-color: #f05a89;
+    box-shadow:
+        0 0 12px #b8325b55,
+        0 0 32px #b8325b25;
+    transform: translateY(-8px);
+}
+/* ===== ESPECIALIDADES ===== */
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.rejilla > li {
+    --luz: #d94b78;
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    padding: 24px 18px;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* Cada especialidad tiene su propio brillo */
+.rejilla > li:nth-child(1) { --luz: #e64b7c; } /* Programación */
+.rejilla > li:nth-child(2) { --luz: #bb83ff; } /* IA */
+.rejilla > li:nth-child(3) { --luz: #48baff; } /* Ciberseguridad */
+.rejilla > li:nth-child(4) { --luz: #e5bd77; } /* Hospedaje */
+.rejilla > li:nth-child(5) { --luz: #ff8a65; } /* Alimentos */
+.rejilla > li:nth-child(6) { --luz: #51d8c2; } /* Logística */
+.rejilla > li:nth-child(7) { --luz: #9e9aff; } /* Contabilidad */
+.rejilla > li:nth-child(8) { --luz: #ffb34d; } /* Mecánica */
+
+.rejilla > li::before {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: -65px;
+    right: -45px;
+    border-radius: 50%;
+    background: var(--luz);
+    opacity: .17;
+    filter: blur(25px);
+    pointer-events: none;
+    transition: opacity .35s, transform .5s;
+}
+
+.rejilla > li:hover {
+    border-color: var(--luz);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--luz) 30%, transparent);
+    transform: translateY(-8px);
+}
+
+.rejilla > li:hover::before {
+    opacity: .5;
+    transform: scale(1.7);
+}
+
+/* Línea luminosa superior */
+.rejilla > li {
+    border-top: 2px solid var(--luz);
+}
+
+/* Diseño para celular */
+@media (max-width: 650px) {
+    .rejilla {
+        grid-template-columns: 1fr;
+    }
+
+    .rejilla > li {
+        padding: 20px 16px;
+    }
+}
